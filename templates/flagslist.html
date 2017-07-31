@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{continent}}</title>
+</head>
+<body>
+{%for country in countries%}
+	<div class="flagContainer">
+		<img src="{{country.pic_url}}">
+		<h3> {{country.name}} </h3>
+	</div>
+{%endfor%}
+</body>
+</html>
