@@ -4,7 +4,7 @@ import pycountry
 
 Base = declarative_base()
 
-class Continet(Base):
+class Continent(Base):
     __tablename__  = 'continent'
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -16,6 +16,7 @@ class Country(Base):
 	name = Column(String)
 	continet = Column(Integer)#continent id
 	population = Column(Integer)
+	flag = Column(String(140))
 
 class City(Base):
 	__tablename__ = 'city'
@@ -24,7 +25,7 @@ class City(Base):
 	country = Column(Integer)#country id
 	capital = Column(Boolean, default=False)
 
-class Posts(Base):
+class Post(Base):
 	__tablename__ = 'post'
 	id = Column(Integer, primary_key=True)
 	sender = Column(String)

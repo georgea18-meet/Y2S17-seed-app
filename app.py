@@ -21,9 +21,9 @@ def hello_world():
 @app.route('/countries/<int:continent>')
 def flags_menu(continent):
 	countries = session.query(Country).filter_by(continent=continent).all()
-    return render_template('flagslist.html',countries = countries,continent=continent)
+	return render_template('flagslist.html',countries = countries,continent=continent)
 
-@app.route('/add/<str:country>', methods=['GET','POST'])
+@app.route('/add/<int:country>', methods=['GET','POST'])
 def adding_form(country):
 	if request.method()=='GET':
 		cities = session.query(City).filter_by(country=country).all()
@@ -39,12 +39,24 @@ def adding_form(country):
 
 		return redirect(url_for('feed',country=country))
 
-@app.route('/cities/<str:country>')
+@app.route('/cities/<int:country>')
 def country(country):
 	cities = session.query(City).filter_by(country=country).all()
 	return render_template('country.html',cities=cities,country=country)
 
-@app.route('/feed/<str:city>')
+@app.route('/feed/<int:city>')
 def feed(city):
 	posts = session.query(Post).filter_by(city=city).all()
-	return render_template('cityfeed.html'.posts=posts,city=city)
+	return render_template('cityfeed.html',posts=posts,city=city)
+
+@app.route('/addinfo/<int:country>',methods=['GET','POST'])
+def addinfo(country):
+	c = session.query(Country).filter_by(id=country).first()
+	continents = session.query(Continent).all()
+	if request.method == 'GET':
+		return render_template('addinfo.html',country=c,continents=continents)
+	else:
+		c.continent = request.form.get(continent)
+		c.flag = request.form.get(flag)
+		session.commit()
+		return redirect(url_for('addinfo',country=country))
