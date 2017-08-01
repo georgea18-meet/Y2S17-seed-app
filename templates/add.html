@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Travit </title>
+	<h2>TravIt</h2>
+</head>
+<body>
+<form> 
+	<p1>Add your post </p1><br> 
+	<p2>name:</p2>
+	<input type="text" name="name" placeholder="Enter your name"><br><br>
+	<p3> review:</p3>
+	<textarea type="text" name="review">Enter your review here </textarea> <br>
+	<p3> Where are you from?</p3>
+	<input type="text" name="usercountry" placeholder="Where are you from?"><br>
+	{% for city in cities %}
+	<input type="radio" name="city" value="{{city.id}}">{{city.name}}
+	{%endfor%}<br>
+	<p3>Enter your picture here(url)</p3>
+	<input type="text" name="img" placeholder="Enter the url"><br>
+	<input type="submit" name="submit">
+</form>
+</body>
+</html>
