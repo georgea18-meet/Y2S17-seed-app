@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<h1> {{country.name}} </h1>
+<form action="{{url_for('addinfo',country = country.id)}}">
+	{%for continent in continents%}
+	<input type="radio" name="continent" value="{{continent.id}}"> {{continent.name}} <br>
+	{%endfor%}
+	<input type="text" name="flag" placeholder="URL"><br>
+	<input type="submit">
+	<a href="{{url_for('addinfo',country=(country.id)+1)}}">next</a>
+</form>
+</body>
+</html>
