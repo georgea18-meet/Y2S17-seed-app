@@ -5,13 +5,14 @@
 </head>
 <body>
 <h1> {{country.name}} </h1>
-<form action="{{url_for('addinfo',country = country.id)}}">
+<form action="{{url_for('addinfo',country = country.id)}}" method="post">
 	{%for continent in continents%}
 	<input type="radio" name="continent" value="{{continent.id}}"> {{continent.name}} <br>
 	{%endfor%}
 	<input type="text" name="flag" placeholder="URL"><br>
 	<input type="submit">
-	<a href="{{url_for('addinfo',country=(country.id)+1)}}">next</a>
+	<a href="{{url_for('addinfo',country=(country.id)+1)}}">next</a><br>
+	<iframe src="https://www.google.co.il/webhp?hl=ar&sa=X&ved=0ahUKEwj82ozR3rXVAhUC6RQKHQ6nCBQQPAgD"></iframe>
 </form>
 </body>
 </html>
