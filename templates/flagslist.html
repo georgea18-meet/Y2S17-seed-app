@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{continent}}</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+	<title>{{continent.name}}</title>
 </head>
+<h1>{{continent.name}}</h1>
 <body>
 {%for country in countries%}
 	<div class="flagContainer">
-		<img src="{{country.pic_url}}">
+		<img class="flag" src="{{country.flag}}">
 		<h3> {{country.name}} </h3>
 	</div>
 {%endfor%}

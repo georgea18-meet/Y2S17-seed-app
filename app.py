@@ -30,8 +30,9 @@ def Q_A():
 
 @app.route('/countries/<int:continent>')
 def flags_menu(continent):
-	countries = session.query(Country).filter_by(continent=continent).all()
-	return render_template('flagslist.html',countries = countries,continent=continent)
+	countries = session.query(Country).filter_by(continet=continent).all()
+	c = session.query(Continent).filter_by(id=continent).first()
+	return render_template('flagslist.html',countries = countries,continent=c)
 
 @app.route('/add/<int:country>', methods=['GET','POST'])
 def adding_form(country):
@@ -66,7 +67,11 @@ def addinfo(country):
 	if request.method == 'GET':
 		return render_template('addinfo.html',country=c,continents=continents)
 	else:
+<<<<<<< HEAD
 		c.continent = request.form.get('continent')
+=======
+		c.continet = request.form.get('continent')
+>>>>>>> 236a25570853b5cb21bb03347fd61ad3135c5fd7
 		c.flag = request.form.get('flag')
 		session.commit()
 		return redirect(url_for('addinfo',country=country))
