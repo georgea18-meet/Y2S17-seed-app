@@ -15,8 +15,18 @@ session = DBSession()
 
 
 @app.route('/')
-def hello_world():
-    return render_template('index.html')
+def main():
+    return render_template('mainpage.html')
+
+
+@app.route('/about-us')
+def about_us():
+    return render_template('about_us.html')
+
+@app.route('/Q&A')
+def Q_A():
+	return render_template('Q&A.html')    
+
 
 @app.route('/countries/<int:continent>')
 def flags_menu(continent):
@@ -26,15 +36,15 @@ def flags_menu(continent):
 
 @app.route('/add/<int:country>', methods=['GET','POST'])
 def adding_form(country):
-	if request.method()=='GET':
+	if request.method =='GET':
 		cities = session.query(City).filter_by(country=country).all()
 		return render_template('add.html',cities=cities)
 	else:
 		post = Post()
-		post.sender = request.form.get(name)
-		post.text = request.form.get(review)
-		post.sender_country = request.form.get(usercountry)
-		post.city = request.form.get(city)
+		post.sender = request.form.get('name')
+		post.text = request.form.get('review')
+		post.sender_country = request.form.get('usercountry')
+		post.city = request.form.get('city')
 		post.country = session.query(City).filter_by(id=post.city).first().country
 		post.pic_url
 
@@ -57,7 +67,11 @@ def addinfo(country):
 	if request.method == 'GET':
 		return render_template('addinfo.html',country=c,continents=continents)
 	else:
+<<<<<<< HEAD
+		c.continent = request.form.get('continent')
+=======
 		c.continet = request.form.get('continent')
+>>>>>>> 236a25570853b5cb21bb03347fd61ad3135c5fd7
 		c.flag = request.form.get('flag')
 		session.commit()
 		return redirect(url_for('addinfo',country=country))

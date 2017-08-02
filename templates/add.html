@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
 	<title>Travit_share </title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
 	<h2>TravIt</h2>
 </head>
 <body>
@@ -19,7 +21,7 @@
 	<p3>Enter your picture here(url)</p3>
 	<input type="text" name="img" placeholder="Enter the url"><br>
 	<input type="submit" name="submit">
-	<a href="file:///home/student/Desktop/Y2S17-seed-app/mainpage.html">cancel </a>
+	<a href="{{ url_for('main') }}">cancel </a>
 </form>
 
 
