@@ -41,10 +41,12 @@ topnav {
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
+}
 
-
-.img-circle {
-    border-radius: 50%;
+.img-circle{
+	/*border-style: solid;*/
+    border-radius: 100px;
+    border: solid 3px;
 }
    
 
@@ -114,3 +116,9 @@ function closeNav() {
 }
 </script>
 
+<div class="topnav">
+  <a class="active" href="{{url_for('main')}}">Home</a>
+  <a href="{{url_for('about_us')}}">About Us</a>
+  <a href="{{url_for('Q_A')}}">Q&A</a>
+  <a></a><img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80">
+</div>
