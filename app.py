@@ -67,11 +67,7 @@ def addinfo(country):
 	if request.method == 'GET':
 		return render_template('addinfo.html',country=c,continents=continents)
 	else:
-<<<<<<< HEAD
-		c.continent = request.form.get('continent')
-=======
 		c.continet = request.form.get('continent')
->>>>>>> 236a25570853b5cb21bb03347fd61ad3135c5fd7
 		c.flag = request.form.get('flag')
 		session.commit()
 		return redirect(url_for('addinfo',country=country))
