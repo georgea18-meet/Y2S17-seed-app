@@ -1,6 +1,6 @@
 # flask imports
 from flask import Flask, render_template, request, redirect, url_for
-
+import wikipedia
 # SQLAlchemy
 from model import Base, Country, City, Post, Continent
 from sqlalchemy import create_engine
@@ -52,8 +52,14 @@ def adding_form(country):
 
 @app.route('/cities/<int:country>')
 def country(country):
+	continents = session.query(Continent).all()
+	countr = session.query(Country).filter_by(id=country).first()
 	cities = session.query(City).filter_by(country=country).all()
-	return render_template('country.html',cities=cities,country=country)
+	if countr.name=='Georgia':
+		info = wikipedia.page(countr.name+' country').content.split('===')
+	else:
+		info = wikipedia.page(countr.name).content.split('===')
+	return render_template('country_feed.html',cities=cities,country=countr,info=info,continents=continents)
 
 @app.route('/feed/<int:city>')
 def feed(city):

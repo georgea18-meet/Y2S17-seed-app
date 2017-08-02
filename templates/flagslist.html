@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='style.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
 	<script type="text/javascript" src="{{url_for('static',filename='/js/script.js')}}"></script>
 	<title>{{continent.name}}</title>
 </head>
 <body>
 <h1>{{continent.name}}</h1>
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for countries..">
 {%for country in countries%}
+<a href="{{url_for('country',country=country.id)}}">
 	<div class="flagContainer">
-	<ul id='myUL'>
-	<li>
 		<img class="flag" src="{{country.flag}}">
 		<h3> {{country.name}} </h3>
-	</li>
 	</div>
+</a>
 {%endfor%}
 </body>
 </html>

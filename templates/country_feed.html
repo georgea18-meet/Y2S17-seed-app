@@ -2,12 +2,17 @@
 <html>
 <head>
 	<title>{{country.name}}</title>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
 </head>
 <body>
 <h1>{{country.name}}</h1>
-<aside>
-	<img src="{{country.flag}}">
-	<h2>{{counytry.name}},{{continents[country.continet-1].id}}
+<aside class="side">
+	<img class="flag" src="{{country.flag}}">
+	<h2>{{country.name}}, {{continents[country.continet-1].name}}</h2>
+	{%for i in info%}
+	<p style="max-width: 300px"> {{i}} </p><br><br>
+	{%endfor%}
+</aside>
 	
 </aside>
 </body>
