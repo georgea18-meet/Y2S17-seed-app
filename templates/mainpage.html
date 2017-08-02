@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
+<title>TravelIt</title>
+<h1 class="big-input">TravIt</h1>
+<img src="/static/img/TravIt2.jpg" alt="logo" style="width:650px;height:200px;">
+
+</head>
+<body>
+
+<div>
+
+<a href="{{ url_for('about_us') }}" style= "color: red"> about us</a><br> 
+<a href="{{ url_for('Q_A') }}" style="color:red" >Q&A</a>
+<br><br>
+
+</div>	
+<div>
+	<button style="width:90px;height:50px" type="button" onclick="alert('you clicked Australia')"> Australia</button>
+	<button  style="width:90px;height:50px" type="button" onclick="alert('You clicked Asia')">Asia</button>
+	<button style="width:90px;height:50px" type="button" onclick="alert('You clicked Europe')">Europe</button>
+	<button style="width:90px;height:50px" type="button" onclick="alert('You clicked South America')">South America</button>
+	<button style="width:90px;height:50px" type="button" onclick="alert('You clicked North America')">North America</button> 
+	<button style="width:90px;height:50px" type="button" onclick="alert('You clicked Africa')">Africa</button>  
+</div>
+<img src="https://s-media-cache-ak0.pinimg.com/originals/b6/1a/4b/b61a4b1a7172cf86ca65e0ede46c26ff.jpg" width="1000" >
+
+</body> 
+</html>
