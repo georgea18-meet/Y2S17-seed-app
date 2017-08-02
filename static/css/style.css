@@ -1,28 +1,28 @@
-<<<<<<< HEAD
-=======
 
 body{
-	background-color: blue;
+	background-color: rgb(20,118,137);
+	color: rgb(173,226,93);
 	}
->>>>>>> 5091954c3973311fe8b9fd0ef26c5af482f91221
+
 h1{
   	color: red;
 }
 .flagContainer{
+	color: black;
+	background-color: rgb(255,255,255);
+	border-style: solid;
+	border-width: 5px;
+	border-radius: 50px;
 	float: left;
 	margin: 10px;
 	padding: 10px;
 }
 .flag{
-<<<<<<< HEAD
 	width:300px;
 	height:180px;
+	margin: 20px;
 }
-=======
-	width:150px;
-	height:50px;
 
-}
 topnav {
     background-color: #333;
     overflow: hidden;
@@ -121,5 +121,13 @@ function closeNav() {
     document.body.style.backgroundColor = "white";
 }
 </script>
->>>>>>> 5091954c3973311fe8b9fd0ef26c5af482f91221
 
+#myUL{
+	list-style: none;
+}
+
+.side{
+	border-right-style: solid;
+	border-right-width: 10px;
+	border-right-color: rgb(173,226,93);
+}
