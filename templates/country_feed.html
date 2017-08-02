@@ -5,6 +5,13 @@
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
 </head>
 <body>
+<div class="topnav">
+  <a href="{{url_for('main')}}">Home</a>
+  <a href="{{url_for('about_us')}}">About Us</a>
+  <a href="{{url_for('Q_A')}}">Q&A</a>
+  <a href="{{url_for('flags_menu',continent=country.continet)}}">Continent: {{continents[country.continet-1].name}}</a><br>
+</div>
+<br>
 <h1>{{country.name}}</h1>
 <aside class="side">
 	<img class="flag" src="{{country.flag}}">
@@ -13,7 +20,16 @@
 	<p style="max-width: 300px"> {{i}} </p><br><br>
 	{%endfor%}
 </aside>
-	
+<div style="float: left">
+	{%for p in posts%}
+	<div class='post'>
+	<h2>{{cities[p.city-1].name}},{{country.name}}</h2>
+	<h3>{{p.sender}},{{p.sender_country}}</h3>
+	<img src="{{p.pic_url}}">
+	<p>{{p.text}}</p>
+	</div>
+	{%endfor%}
+</div>
 </aside>
 </body>
 </html>

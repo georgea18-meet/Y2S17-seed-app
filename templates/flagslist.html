@@ -6,6 +6,12 @@
 	<title>{{continent.name}}</title>
 </head>
 <body>
+<div class="topnav">
+  <a class="active" href="{{url_for('main')}}">Home</a>
+  <a href="{{url_for('about_us')}}">About Us</a>
+  <a href="{{url_for('Q_A')}}">Q&A</a>
+</div>
+<div>
 <h1>{{continent.name}}</h1>
 {%for country in countries%}
 <a href="{{url_for('country',country=country.id)}}">

@@ -38,28 +38,31 @@ def flags_menu(continent):
 def adding_form(country):
 	if request.method =='GET':
 		cities = session.query(City).filter_by(country=country).all()
-		return render_template('add.html',cities=cities)
+		return render_template('add.html',cities=cities,country=country)
 	else:
 		post = Post()
 		post.sender = request.form.get('name')
 		post.text = request.form.get('review')
 		post.sender_country = request.form.get('usercountry')
 		post.city = request.form.get('city')
-		post.country = session.query(City).filter_by(id=post.city).first().country
-		post.pic_url
+		post.country = country
+		post.pic_url = request.form.get('img')
+		session.add(post)
+		session.commit()
 
-		return redirect(url_for('feed',country=country))
+		return redirect(url_for('country',country=country))
 
 @app.route('/cities/<int:country>')
 def country(country):
 	continents = session.query(Continent).all()
 	countr = session.query(Country).filter_by(id=country).first()
 	cities = session.query(City).filter_by(country=country).all()
+	posts = session.query(Post).filter_by(country=country)
 	if countr.name=='Georgia':
 		info = wikipedia.page(countr.name+' country').content.split('===')
 	else:
 		info = wikipedia.page(countr.name).content.split('===')
-	return render_template('country_feed.html',cities=cities,country=countr,info=info,continents=continents)
+	return render_template('country_feed.html',cities=cities,country=countr,info=info,continents=continents,posts=posts)
 
 @app.route('/feed/<int:city>')
 def feed(city):
@@ -82,4 +85,5 @@ def addinfo(country):
 def test():
 	countries = session.query(Country).all()
 	cities = session.query(City).all()
-	return render_template('database_test.html',countries=countries,cities=cities)
+	posts = session.query(Post).all()
+	return render_template('database_test.html',countries=countries,cities=cities,posts=posts)
