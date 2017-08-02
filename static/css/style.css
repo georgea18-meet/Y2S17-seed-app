@@ -49,10 +49,12 @@ topnav {
 .topnav a.active {
     background-color: #4CAF50;
     color: white;
+}
 
-
-.img-circle {
-    border-radius: 50%;
+.img-circle{
+	/*border-style: solid;*/
+    border-radius: 100px;
+    border: solid 3px;
 }
    
 
@@ -131,3 +133,4 @@ function closeNav() {
 	border-right-width: 10px;
 	border-right-color: rgb(173,226,93);
 }
+
