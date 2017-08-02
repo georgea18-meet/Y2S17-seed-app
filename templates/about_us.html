@@ -3,16 +3,53 @@
 <head>
 <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
 <title>About Us</title>
+</head>
+<body>
+<style>
+body {margin:0;}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a class="active" href="{{url_for('main')}}">Home</a>
+  <a href="{{url_for('about_us')}}">About Us</a>
+  <a href="{{url_for('Q_A')}}">Q&A</a>
+</div>
+
 <img src="/static/img/TravIt2.jpg" alt="logo" style="width:650px;height:200px;">
 <h1 class="big-input">About Us</h1>
 
-</head>
-<body>
 <p>We are "TravIt"!</p>	
+<img class="img-circle" src="/static/img/Dana.jpg" style="width:300px; height:300px ">
+<h3> Dana Ghoul-Content developer</h3>
 
 
-
-<a href="{{url_for('main')}}">Back To The Main Page</a>
 </body>
 
 
