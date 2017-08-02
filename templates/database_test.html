@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<table>
+{%for co in countries%}
+	<tr><td>{{co.id}}</td><td>{{co.name}}</td><td>{{co.continet}}</td><td><img src="{{co.flag}}"></td><td><a href="{{url_for('addinfo',country=co.id)}}">edit</a></td></tr>
+{%endfor%}
+{%for ci in cities%}
+	<tr><td>{{ci.id}}</td><td>{{ci.name}}</td><td>{{countries[ci.country-1].name}}</td></tr>
+{%endfor%}
+</table>
+
+
+</body>
+</html>

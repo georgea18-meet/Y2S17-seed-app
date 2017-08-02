@@ -61,3 +61,9 @@ def addinfo(country):
 		c.flag = request.form.get('flag')
 		session.commit()
 		return redirect(url_for('addinfo',country=country))
+
+@app.route('/test')
+def test():
+	countries = session.query(Country).all()
+	cities = session.query(City).all()
+	return render_template('database_test.html',countries=countries,cities=cities)
