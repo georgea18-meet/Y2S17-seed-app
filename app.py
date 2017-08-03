@@ -5,7 +5,7 @@ from flask import Flask, render_template, request, redirect, url_for
 from model import Base, Country, City, Post, Continent
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-
+import wikipedia
 # setup
 app = Flask(__name__)
 engine = create_engine('sqlite:///project.db')
@@ -64,12 +64,19 @@ def country(country):
 	countr = session.query(Country).filter_by(id=country).first()
 	cities = session.query(City).filter_by(country=country).all()
 	all_cities = session.query(City).all()
-	posts = session.query(Post).filter_by(country=country)
+	posts = session.query(Post).filter_by(country=country).all()
+	posts.reverse()
 	if countr.name=='Georgia':
 		info = wikipedia.page(countr.name+' country').content.split('==')
 	else:
 		info = wikipedia.page(countr.name).content.split('==')
 	return render_template('country_feed.html',cities=cities,country=countr,info=info,continents=continents,posts=posts,acities=all_cities)
+
+@app.route('/cities/list/<int:country>')
+def cities_list(country):
+	countr = session.query(Country).filter_by(id=country).first()
+	cities = session.query(City).filter_by(country=country).all()
+	return render_template('cities_list.html',cities=cities,country=countr)	
 
 @app.route('/feed/<int:city>')
 def feed(city):

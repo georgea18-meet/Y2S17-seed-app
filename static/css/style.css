@@ -80,7 +80,7 @@ topnav {
 }
 
 .posts_container{
-    margin-left: 200px;
+    margin-left: 100px;
     max-width: 500px;
     text-align: center;
 }
@@ -93,4 +93,16 @@ topnav {
     border-radius: 50px;
     margin: 10px;
     padding: 10px;
+}
+
+.post_pic{
+    width: 400px;
+    height: 300px;
+}
+
+.cities_list{
+    float:left; 
+    width: 200px;
+    height: 2000px;
+    margin-left: 50px;
 }
