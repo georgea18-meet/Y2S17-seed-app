@@ -1,6 +1,6 @@
 # flask imports
 from flask import Flask, render_template, request, redirect, url_for
-import wikipedia
+
 # SQLAlchemy
 from model import Base, Country, City, Post, Continent
 from sqlalchemy import create_engine
