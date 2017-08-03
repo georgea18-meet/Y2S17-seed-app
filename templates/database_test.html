@@ -11,6 +11,9 @@
 {%for ci in cities%}
 	<tr><td>{{ci.id}}</td><td>{{ci.name}}</td><td>{{countries[ci.country-1].name}}</td></tr>
 {%endfor%}
+{%for p in posts%}
+	<tr><td>{{p.sender}}</td><td>{{countries[p.country-1]}}</td><td>{{cities[p.city-1]}}</td><td>{{p.text}}</td></tr>
+{%endfor%}
 </table>
 
 

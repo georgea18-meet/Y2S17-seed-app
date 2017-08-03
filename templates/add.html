@@ -4,26 +4,37 @@
 	
 	<title>Travit_share </title>
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}">
-	<h2>TravIt</h2>
 </head>
 <body>
-<form action="{{url_for('adding_form')"> 
-	<p1>Add your post </p1><br> 
-	<p2>name:</p2>
+<div class="topnav">
+  <a class="active" href="{{url_for('main')}}">Home</a>
+  <a href="{{url_for('about_us')}}">About Us</a>
+  <a href="{{url_for('Q_A')}}">Q&A</a>
+  <br>
+</div>
+<div>
+<br>
+<h2>TravIt</h2>
+<form action="{{url_for('adding_form',country=country)}}" method='POST'> 
+	<h1>Add your post </h1><br> 
+	<h2>name:</h2>
 	<input type="text" name="name" placeholder="Enter your name"><br><br>
-	<p3> review:</p3>
-	<textarea type="text" name="review">Enter your review here </textarea> <br>
-	<p3> Where are you from?</p3>
+	<h3> review:</h3>
+	<textarea type="text" name="review" placeholder="Enter your review here"></textarea> <br>
+	<h3> Where are you from?</h3>
 	<input type="text" name="usercountry" placeholder="Where are you from?"><br>
+	<h3>What city are you in?</h3>
+	<ul style="list-style: none">
 	{% for city in cities %}
-	<input type="radio" name="city" value="{{city.id}}">{{city.name}}
+	<li><input type="radio" name="city" value="{{city.id}}">{{city.name}}</li>
 	{%endfor%}<br>
-	<p3>Enter your picture here(url)</p3>
+	</ul>
+	<h3>Enter your picture here(url)</h3>
 	<input type="text" name="img" placeholder="Enter the url"><br>
-	<input type="submit" name="submit">
+	<input type="submit">
 	<a href="{{ url_for('main') }}">cancel </a>
 </form>
-
+</div>
 
 
 </body>
