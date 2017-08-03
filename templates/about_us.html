@@ -65,7 +65,7 @@ li.dropdown {
  <img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80">
         <ul>
 
-          <li><a href="{{url_for('main')}}">Home</a></li>
+          <li style="background-color: green"><a href="{{url_for('main')}}">Home</a></li>
           <li><a href="{{url_for('about_us')}}">About Us</a></li>
           <li><a href="{{url_for('Q_A')}}">Q&A</a></li>
           <li class="dropdown">
@@ -79,7 +79,9 @@ li.dropdown {
                <a href="{{url_for('flags_menu',continent=6)}}">Australia</a>
             </div>
           </li>
+          <!--
           <li><img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80"></li>
+          -->
         </ul>
         
     </div>
