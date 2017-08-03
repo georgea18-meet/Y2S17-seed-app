@@ -64,7 +64,7 @@ li.dropdown {
 </style>
 </head>
 <body>
- <div id="header">
+    <div id="header">
         <ul>
           <li><a href="{{url_for('main')}}">Home</a></li>
           <li><a href="{{url_for('about_us')}}">About Us</a></li>
@@ -72,32 +72,19 @@ li.dropdown {
           <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
             <div class="dropdown-content">
-              <a href="{{url_for('main')}}">Asia</a>
-              <a href="{{url_for('main')}}">Australia</a>
-              <a href="{{url_for('main')}}">South Amrica</a>
-              <a href="{{url_for('main')}}">North Amrica</a>
-              <a href="{{url_for('main')}}">Africa</a>
-              <a href="{{url_for('main')}}">Eourpe</a>
+               <a href="{{url_for('flags_menu',continent=4)}}">North America</a>
+               <a href="{{url_for('flags_menu',continent=5)}}">South America</a>
+               <a href="{{url_for('flags_menu',continent=1)}}">Europe</a>
+               <a href="{{url_for('flags_menu',continent=2)}}">Africa</a>
+               <a href="{{url_for('flags_menu',continent=3)}}">Asia</a>
+               <a href="{{url_for('flags_menu',continent=6)}}">Australia</a>
             </div>
           </li>
+          <li><img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80"></li>
         </ul>
-        
     </div>
-
     <div id="content-body">
-
-
-<!--
-<div class="topnav">
-  <a class="active" href="{{url_for('main')}}">Home</a>
-  <a>Continents</a>
-  <a href="{{url_for('about_us')}}">About Us</a>
-  <a href="{{url_for('Q_A')}}">Q&A</a>
-  -->
-  <img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80">
-</div>
-
-<img src="/static/img/TravIt2.jpg" alt="logo" style="width:650px;height:200px;text-align:center;">
+  
 <h1> Q&A</h1>
 <p>What is the problem we are trying to solve? </p>
 <ul>
