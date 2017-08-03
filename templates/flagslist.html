@@ -6,11 +6,15 @@
 	<title>{{continent.name}}</title>
 </head>
 <body>
+
 <div class="topnav">
   <a class="active" href="{{url_for('main')}}">Home</a>
+  <a>Continents</a>
   <a href="{{url_for('about_us')}}">About Us</a>
   <a href="{{url_for('Q_A')}}">Q&A</a>
+  <img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80">
 </div>
+
 <div>
 <h1>{{continent.name}}</h1>
 {%for country in countries%}
