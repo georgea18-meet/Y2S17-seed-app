@@ -57,12 +57,13 @@ def country(country):
 	continents = session.query(Continent).all()
 	countr = session.query(Country).filter_by(id=country).first()
 	cities = session.query(City).filter_by(country=country).all()
+	all_cities = session.query(City).all()
 	posts = session.query(Post).filter_by(country=country)
 	if countr.name=='Georgia':
-		info = wikipedia.page(countr.name+' country').content.split('===')
+		info = wikipedia.page(countr.name+' country').content.split('==')
 	else:
-		info = wikipedia.page(countr.name).content.split('===')
-	return render_template('country_feed.html',cities=cities,country=countr,info=info,continents=continents,posts=posts)
+		info = wikipedia.page(countr.name).content.split('==')
+	return render_template('country_feed.html',cities=cities,country=countr,info=info,continents=continents,posts=posts,acities=all_cities)
 
 @app.route('/feed/<int:city>')
 def feed(city):

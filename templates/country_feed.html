@@ -9,23 +9,22 @@
   <a href="{{url_for('main')}}">Home</a>
   <a href="{{url_for('about_us')}}">About Us</a>
   <a href="{{url_for('Q_A')}}">Q&A</a>
-  <a href="{{url_for('flags_menu',continent=country.continet)}}">Continent: {{continents[country.continet-1].name}}</a><br>
+  <a href="{{url_for('flags_menu',continent=country.continet)}}">Continent: {{continents[country.continet-1].name}}</a>
+  <a href="{{url_for('adding_form',country=country.id)}}">Post</a><br>
 </div>
 <br>
 <h1>{{country.name}}</h1>
-<aside class="side">
+<aside class="side" style="max-width: 400px; float:left">
 	<img class="flag" src="{{country.flag}}">
 	<h2>{{country.name}}, {{continents[country.continet-1].name}}</h2>
-	{%for i in info%}
-	<p style="max-width: 300px"> {{i}} </p><br><br>
-	{%endfor%}
+	<p style="max-width: 300px"> {{info[0]}} </p><br><br>
 </aside>
-<div style="float: left">
+<div style="float: left" class="posts_container">
 	{%for p in posts%}
 	<div class='post'>
-	<h2>{{cities[p.city-1].name}},{{country.name}}</h2>
+	<h2>{{acities[p.city-1].name}},{{country.name}}</h2>
 	<h3>{{p.sender}},{{p.sender_country}}</h3>
-	<img src="{{p.pic_url}}">
+	<img class='post_pic' src="{{p.pic_url}}">
 	<p>{{p.text}}</p>
 	</div>
 	{%endfor%}
