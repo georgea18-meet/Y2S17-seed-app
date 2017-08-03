@@ -79,3 +79,18 @@ topnav {
 	border-right-color: rgb(173,226,93);
 }
 
+.posts_container{
+    margin-left: 200px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.post{
+    color: black;
+    background-color: rgb(255,255,255);
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 50px;
+    margin: 10px;
+    padding: 10px;
+}

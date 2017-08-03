@@ -64,6 +64,7 @@ li.dropdown {
 </style>
 </head>
 <body>
+
  <div id="header">
  <img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80">
         <ul>
@@ -73,19 +74,21 @@ li.dropdown {
           <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Continent</a>
             <div class="dropdown-content">
-              <a href="{{url_for('main')}}">Asia</a>
-              <a href="{{url_for('main')}}">Australia</a>
-              <a href="{{url_for('main')}}">South Amrica</a>
-              <a href="{{url_for('main')}}">North Amrica</a>
-              <a href="{{url_for('main')}}">Africa</a>
-              <a href="{{url_for('main')}}">Eourpe</a>
+               <a href="{{url_for('flags_menu',continent=4)}}">North America</a>
+               <a href="{{url_for('flags_menu',continent=5)}}">South America</a>
+               <a href="{{url_for('flags_menu',continent=1)}}">Europe</a>
+               <a href="{{url_for('flags_menu',continent=2)}}">Africa</a>
+               <a href="{{url_for('flags_menu',continent=3)}}">Asia</a>
+               <a href="{{url_for('flags_menu',continent=6)}}">Australia</a>
             </div>
           </li>
+          <li><img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80"></li>
         </ul>
 
-    </div>
 
+    </div>
     <div id="content-body">
+
 
 
 <!--
@@ -97,6 +100,10 @@ li.dropdown {
   -->
   
 </div>
+
+
+  
+ 
 
 <img src="/static/img/TravIt2.jpg" alt="logo" style="width:650px;height:200px;text-align:center;">
 <h1> Q&A</h1>

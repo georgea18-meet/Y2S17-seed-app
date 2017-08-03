@@ -64,49 +64,49 @@ li.dropdown {
  <div id="header">
  <img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80">
         <ul>
+
           <li><a href="{{url_for('main')}}">Home</a></li>
           <li><a href="{{url_for('about_us')}}">About Us</a></li>
           <li><a href="{{url_for('Q_A')}}">Q&A</a></li>
           <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Continent</a>
             <div class="dropdown-content">
-              <a href="{{url_for('main')}}">Asia</a>
-              <a href="{{url_for('main')}}">Australia</a>
-              <a href="{{url_for('main')}}">South Amrica</a>
-              <a href="{{url_for('main')}}">North Amrica</a>
-              <a href="{{url_for('main')}}">Africa</a>
-              <a href="{{url_for('main')}}">Eourpe</a>
+               <a href="{{url_for('flags_menu',continent=4)}}">North America</a>
+               <a href="{{url_for('flags_menu',continent=5)}}">South America</a>
+               <a href="{{url_for('flags_menu',continent=1)}}">Europe</a>
+               <a href="{{url_for('flags_menu',continent=2)}}">Africa</a>
+               <a href="{{url_for('flags_menu',continent=3)}}">Asia</a>
+               <a href="{{url_for('flags_menu',continent=6)}}">Australia</a>
             </div>
           </li>
+          <li><img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80"></li>
         </ul>
         
     </div>
-
     <div id="content-body">
 
-<!--
-<div class="topnav">
-  <a class="active" href="{{url_for('main')}}">Home</a>
-  <a>Continents</a>
-  <a href="{{url_for('about_us')}}">About Us</a>
-  <a href="{{url_for('Q_A')}}">Q&A</a>
-  
+<h1 class="big-input">About Us</h1>
+<h1>We are "TravIt"!</h1>
+<div style="float: left; margin: 45px">
+<h3>George Abu Dauod - Software Engineer </h3>
+<img class="img-circle" src="/static/img/George.jpg" style="width:300px;height:300px;" >
 </div>
--->
-<img src="/static/img/TravIt2.jpg" alt="logo" style="width:650px;height:200px;">
-<h1 class="big-input">About Us</h1><br>
-
-<h1>We are "TravIt"!</h1>	
+<div style="float: left; margin: 45px">
 <h3>Dana Ghoul- Content Developer</h3>
 <img class="img-circle" src="/static/img/Dana.jpg" style="width:300px;height:300px;">
-<h3>George Abudauod - Software Engineer </h3>
-<img class="img-circle" src="/static/img/George.jpg" style="width:300px;height:300px;" >
+</div>
+<div style="float: left; margin: 45px">
 <h3>Yonatan Alterman - Designer & Founder</h3>
 <img class="img-circle" src="/static/img/Yonatan.JPG" style="width:300px;height:300px;">
+</div>
+<div style="float: left; margin: 20px">
 <h3>May Raviel- Software Engineer</h3>
 <img class="img-circle" src="/static/img/May.jpg" style="width:300px;height:300px">
-<h3>Yazan Idrees - Marketing director </h3>
+</div>
+<div style="float: right; margin: 20px">
+<h3>Yazan Idrees - Marketing Director </h3>
 <img class="img-circle" src="/static/img/Yazan.jpg" style="width:300px;height:300px">
+</div>
 
 </body>
 </html>
