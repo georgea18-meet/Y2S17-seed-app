@@ -1,6 +1,6 @@
 # flask imports
 from flask import Flask, render_template, request, redirect, url_for
-import wikipedia
+
 # SQLAlchemy
 from model import Base, Country, City, Post, Continent
 from sqlalchemy import create_engine
@@ -23,9 +23,15 @@ def main():
 def about_us():
     return render_template('about_us.html')
 
+
 @app.route('/Q&A')
 def Q_A():
 	return render_template('Q&A.html')    
+
+
+@app.route('/test')
+def test_22():
+	return render_template('test.html') 
 
 
 @app.route('/countries/<int:continent>')
