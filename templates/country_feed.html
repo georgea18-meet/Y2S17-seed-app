@@ -19,7 +19,6 @@
 	<h2>{{country.name}}, {{continents[country.continet-1].name}}</h2>
 	<p style="max-width: 300px"> {{info[0]}} </p><br><br>
 </aside>
-<iframe class="cities_list" src="{{url_for('cities_list',country=country.id)}}"></iframe>
 <div style="float: left" class="posts_container">
 	{%for p in posts%}
 	<div class='post'>

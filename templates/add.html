@@ -24,7 +24,8 @@
 	<h3> Where are you from?</h3>
 	<input type="text" name="usercountry" placeholder="Where are you from?"><br>
 	<h3>What city are you in?</h3>
-	<ul style="list-style: none">
+	<input type="text" name="search" id="search_bar" placeholder="Search..." onkeyup="myFunction()">
+	<ul id="myUL" style="list-style: none">
 	{% for city in cities %}
 	<li><input type="radio" name="city" value="{{city.id}}">{{city.name}}</li>
 	{%endfor%}<br>
@@ -36,6 +37,26 @@
 </form>
 </div>
 
+<script type="text/javascript">
+	function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('search_bar');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
 
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i]
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+</script>
 </body>
 </html>

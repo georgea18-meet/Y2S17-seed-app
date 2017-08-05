@@ -1,14 +1,14 @@
 
 body{
-	background-color: rgb(20,118,137);
-	color: rgb(173,226,93);
+	background-color: rgb(2,195,154);
+	color: rgb(240,243,189);
 	}
 
 h1{
-  	color: red;
+  	color: rgb(5,102,141);
 }
 .flagContainer{
-	color: black;
+	color: rgb(5,102,141);
 	background-color: rgb(255,255,255);
 	border-style: solid;
 	border-width: 5px;
@@ -75,8 +75,8 @@ topnav {
 
 .side{
 	border-right-style: solid;
-	border-right-width: 10px;
-	border-right-color: rgb(173,226,93);
+	border-right-width: 1px;
+	border-right-color: rgb(5,102,141);
 }
 
 .posts_container{
@@ -86,7 +86,7 @@ topnav {
 }
 
 .post{
-    color: black;
+    color: rgb(5,102,141);
     background-color: rgb(255,255,255);
     border-style: solid;
     border-width: 5px;
@@ -105,4 +105,13 @@ topnav {
     width: 200px;
     height: 2000px;
     margin-left: 50px;
+}
+.A{
+    margin: 20px;
+    padding: 10px;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 3px;
+    color: rgb(5,102,141);
+    background-color: rgb(255,255,255);
 }
