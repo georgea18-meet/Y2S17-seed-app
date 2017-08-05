@@ -63,13 +63,15 @@ li.dropdown {
 </style>
 </head>
 <body>
-    <div id="header">
+
+ <div id="header">
+ <img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80">
         <ul>
-          <li><a href="{{url_for('main')}}">Home</a></li>
+          <li style="background-color: green"><a href="{{url_for('main')}}">Home</a></li>
           <li><a href="{{url_for('about_us')}}">About Us</a></li>
           <li><a href="{{url_for('Q_A')}}">Q&A</a></li>
           <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+            <a href="javascript:void(0)" class="dropbtn">Continent</a>
             <div class="dropdown-content">
                <a href="{{url_for('flags_menu',continent=4)}}">North America</a>
                <a href="{{url_for('flags_menu',continent=5)}}">South America</a>
@@ -79,20 +81,24 @@ li.dropdown {
                <a href="{{url_for('flags_menu',continent=6)}}">Australia</a>
             </div>
           </li>
-          <li><img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80"></li>
+          <img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80">
         </ul>
+
+
     </div>
-    <div id="content-body">
-  
+<div id="content-body">
+</div>
+
+
+<img src="/static/img/TravIt2.jpg" alt="logo" style="width:650px;height:200px;text-align:center;">
+
 <h1> Q&A</h1>
 <div class="Q">
 <p>What is the problem we are trying to solve? </p>
 </div>
 <div class="A">
 <ul>
-	<li>Having a trustful website that you can access reviews on places without promotions.</li>
-	<li>Not all websites identify with all countries.</li>
-	<li>Being able to share your opinion directly and easily. </li>
+	<li>Having a trustful website that you can access reviews on places without promotions. Not all websites identify with all countries. Being able to share your opinion directly and easily. </li>
 </ul>
 </div>
 <div class="Q">
@@ -100,7 +106,13 @@ li.dropdown {
 </div>
 <div class="A">
 <ul>
+<<<<<<< HEAD
 	<li>You can simply go to the web page of the country by clicking on the continent that the country belongs to, then you will find a button that says 'Post' after clicking on it, fill the details and click share and you are good to go. </li>
+=======
+	<li>You can simply go to the web page of the country by clicking on the continent that the country belongs to, then you will find a button that says share experience after clicking on it, fill the details and click share and you are good to go. </li>
+
+
+>>>>>>> 7047bc6a9bb96e760d294329e9dfcef06b640a4b
 </ul>
 </div>
 
