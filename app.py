@@ -44,8 +44,16 @@ def flags_menu(continent):
 @app.route('/add/<int:country>', methods=['GET','POST'])
 def adding_form(country):
 	if request.method =='GET':
-		cities = session.query(City).filter_by(country=country).all()
-		return render_template('add.html',cities=cities,country=country)
+		citie = session.query(City).filter_by(country=country).all()
+		cities=[]
+		for c in citie:
+			cities.append(c.name)
+		cities.sort()
+		cities_l = []
+		for cit in cities:
+			ci = session.query(City).filter_by(name=cit).first()
+			cities_l.append(ci)
+		return render_template('add.html',cities=cities_l,country=country)
 	else:
 		post = Post()
 		post.sender = request.form.get('name')
@@ -73,11 +81,28 @@ def country(country):
 		info = wikipedia.page(countr.name).content.split('==')
 	return render_template('country_feed.html',cities=cities,country=countr,info=info,continents=continents,posts=posts,acities=all_cities)
 
-@app.route('/cities/list/<int:country>')
+@app.route('/cities/list/<int:country>',methods=['GET','POST'])
 def cities_list(country):
 	countr = session.query(Country).filter_by(id=country).first()
-	cities = session.query(City).filter_by(country=country).all()
-	return render_template('cities_list.html',cities=cities,country=countr)	
+	if request.method=='GET':
+		citie = session.query(City).filter_by(country=country).all()
+	else:
+		val = str(request.form.get('Search'))
+		citi = session.query(City).filter_by(country=country).all()
+		citie = []
+		for b in citi:
+			if str(b.name).upper().startswith(val.upper()):
+				citie.append(b)
+	cities=[]
+	for c in citie:
+		cities.append(c.name)
+	cities.sort()
+	cities_l = []
+	for cit in cities:
+		ci = session.query(City).filter_by(name=cit).first()
+		cities_l.append(ci)
+	lenn=len(cities)
+	return render_template('cities_list.html',cities=cities_l,country=countr)	
 
 @app.route('/feed/<int:city>')
 def feed(city):

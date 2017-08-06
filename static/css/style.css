@@ -1,14 +1,14 @@
 
 body{
-	background-color: rgb(20,118,137);
-	color: rgb(173,226,93);
+	background-color: rgb(2,195,154);
+	color: rgb(240,243,189);
 	}
 
 h1{
-  	color: red;
+  	color: rgb(5,102,141);
 }
 .flagContainer{
-	color: black;
+	border-color: rgb(5,102,141);
 	background-color: rgb(255,255,255);
 	border-style: solid;
 	border-width: 5px;
@@ -63,6 +63,59 @@ topnav {
     padding: 20px;
 }
 
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    float: left;
+}
+
+.city_bul{
+    float: none;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: red;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
@@ -75,8 +128,8 @@ topnav {
 
 .side{
 	border-right-style: solid;
-	border-right-width: 10px;
-	border-right-color: rgb(173,226,93);
+	border-right-width: 1px;
+	border-right-color: rgb(5,102,141);
 }
 
 .posts_container{
@@ -86,7 +139,7 @@ topnav {
 }
 
 .post{
-    color: black;
+    color: rgb(5,102,141);
     background-color: rgb(255,255,255);
     border-style: solid;
     border-width: 5px;
@@ -105,4 +158,13 @@ topnav {
     width: 200px;
     height: 2000px;
     margin-left: 50px;
+}
+.A{
+    margin: 20px;
+    padding: 10px;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 3px;
+    color: rgb(5,102,141);
+    background-color: rgb(255,255,255);
 }

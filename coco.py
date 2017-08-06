@@ -10,20 +10,8 @@ Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
-cl = []
-for b in list(pycountry.countries):
-	cl.append(str(b.alpha_2))
-gc = geonamescache.GeonamesCache()
-gcd = gc.get_cities()
-for k in gcd.keys():
-	city = City()
-	city.name = str(gcd[k][u'name'])
-	al2 = str(gcd[k][u'countrycode'])
-	if cl.count(al2)>0:
-		ind = cl.index(al2)
-		cn = session.query(Country).filter_by(name=list(pycountry.countries)[ind].name).first().id
-		city.country = cn
-		session.add(city)
-	else:
-		print('HAPPY BIRTHDAY!!!')
+g = session.query(Post).filter_by(country=60).all()
+g[6].country=61
+session.commit()
+session.query(Post).filter_by(country=61).delete()
 session.commit()
