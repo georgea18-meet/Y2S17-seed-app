@@ -10,7 +10,7 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+
 }
 
 li {
@@ -77,13 +77,10 @@ li.dropdown {
                <a href="{{url_for('flags_menu',continent=6)}}">Australia</a>
             </div>
           </li>
-<<<<<<< HEAD
           <!--
           <li><img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80"></li>
           -->
-=======
           <img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80">
->>>>>>> 87d9217ab8aeb70edb492fa13a592da2be5d2c98
         </ul>
     </div>
     <div id="content-body">
@@ -91,13 +88,35 @@ li.dropdown {
 <div>
 <br>
 <h1>{{continent.name}}</h1>
+<input type="text" name="search" id="search_bar" placeholder="Search..." onkeyup="myFunction()">
+<ul id="myUL">
 {%for country in countries%}
 <a href="{{url_for('country',country=country.id)}}">
-	<div class="flagContainer">
-		<img class="flag" src="{{country.flag}}">
-		<h3> {{country.name}} </h3>
-	</div>
+		<li class="flagContainer" style="color: white";><img class="flag" src="{{country.flag}}">
+		<h3 style="color: rgb(5,102,141)">{{country.name}}</h3>{{country.name}}</li>
 </a>
 {%endfor%}
+</ul>
+</div>
+<script type="text/javascript">
+  function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('search_bar');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById('myUL')
+    li = ul.getElementsByTagName('li');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i]
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 </html>

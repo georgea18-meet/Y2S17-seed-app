@@ -27,7 +27,7 @@
 	<input type="text" name="search" id="search_bar" placeholder="Search..." onkeyup="myFunction()">
 	<ul id="myUL" style="list-style: none">
 	{% for city in cities %}
-	<li><input type="radio" name="city" value="{{city.id}}">{{city.name}}</li>
+	<li class="city_bul"><input type="radio" name="city" value="{{city.id}}">{{city.name}}</li>
 	{%endfor%}<br>
 	</ul>
 	<h3>Enter your picture here(url)</h3>
@@ -56,7 +56,6 @@
         }
     }
 }
-</script>
 </script>
 </body>
 </html>
