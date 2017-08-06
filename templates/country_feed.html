@@ -7,9 +7,9 @@
 <body>
 	<div id="header">
         <ul>
-          <li style="background-color: green"><a href="{{url_for('main')}}">Home</a></li>
-          <li><a href="{{url_for('about_us')}}">About Us</a></li>
-          <li><a href="{{url_for('Q_A')}}">Q&A</a></li>
+          <li class="menu_i"><a href="{{url_for('main')}}">Home</a></li>
+          <li class="menu_i"><a href="{{url_for('about_us')}}">About Us</a></li>
+          <li class="menu_i"><a href="{{url_for('Q_A')}}">Q&A</a></li>
           <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Continents</a>
             <div class="dropdown-content">
@@ -21,8 +21,8 @@
                <a href="{{url_for('flags_menu',continent=6)}}">Australia</a>
             </div>
           </li>
-          <li><a href="{{url_for('flags_menu',continent=country.continet)}}">Continent: {{continents[country.continet-1].name}}</a></li>
-          <li><a href="{{url_for('adding_form',country=country.id)}}">Post</a></li>
+          <li class="menu_i"><a href="{{url_for('flags_menu',continent=country.continet)}}">Continent: {{continents[country.continet-1].name}}</a></li>
+          <li class="menu_i"><a href="{{url_for('adding_form',country=country.id)}}">Post</a></li>
           <img style="float:right;" src="/static/img/TravIt2.jpg" alt="menu_logo" width="80">
         </ul>
     </div>
@@ -36,7 +36,6 @@
 	<h2>{{country.name}}, {{continents[country.continet-1].name}}</h2>
 	<p style="max-width: 300px"> {{info[0]}} </p><br><br>
 </aside>
-<iframe class="cities_list" src="{{url_for('cities_list',country=country.id)}}"></iframe>
 <div style="float: left" class="posts_container">
 	{%for p in posts%}
 	<div class='post'>

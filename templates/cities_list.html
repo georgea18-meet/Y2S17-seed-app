@@ -6,10 +6,45 @@
 <body>
 <div style="float: left; max-width: 100px">
 	<ul style="list-style-type: none;">
+	<div style="float: left">
+	<form>
+	<input id="search_bar" type="text" name="search" placeholder="Search..." onkeyup="myFunction()">
+	<ul id="myUL" style="list-style-type: none;">
 		{%for c in cities%}
-		<li><a href="{{url_for('feed',city=c.id)}}">{{c.name}}</a></li>
+		<li><input class="city_bul" type="radio" name="city" value="{{c.id}}">{{c.name}}</li>
 		{%endfor%}
 	</ul>
+	</form>
 </div>
+<script type="text/javascript">
+	var val,i;
+	function Search(){
+		val = $('#search_bar').val();
+		{%for ci in cities%}
+		if (ci.name.indexOf(val)== -1) {
+			$('.city_bul.value={{ci.id}}').hide();
+
+		}
+	{%endfor%}
+	}
+function myFunction() {
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('search_bar');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+
+    // Loop through all list items, and hide those who don't match the search query
+    for (i = 0; i < li.length; i++) {
+        a = li[i]
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
 </body>
 </html>
