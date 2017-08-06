@@ -4,7 +4,7 @@
 	<title></title>
 </head>
 <body>
-	<div style="float: left; max-width: 100px">
+<div style="float: left; max-width: 100px">
 	<ul style="list-style-type: none;">
 		{%for c in cities%}
 		<li><a href="{{url_for('feed',city=c.id)}}">{{c.name}}</a></li>
