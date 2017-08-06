@@ -5,7 +5,8 @@ from flask import Flask, render_template, request, redirect, url_for
 from model import Base, Country, City, Post, Continent
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-import wikipedia
+
+#import wikipedia
 # setup
 app = Flask(__name__)
 engine = create_engine('sqlite:///project.db')
