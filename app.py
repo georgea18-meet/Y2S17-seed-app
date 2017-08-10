@@ -30,9 +30,6 @@ def Q_A():
 	return render_template('Q&A.html')    
 
 
-@app.route('/test')
-def test_22():
-	return render_template('test.html') 
 
 
 @app.route('/countries/<int:continent>')
